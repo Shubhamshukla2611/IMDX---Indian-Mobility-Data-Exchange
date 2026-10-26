@@ -5,6 +5,10 @@ exchange initiative. It presents a cinematic visual identity and explains how
 trusted, interoperable data can connect vehicle, battery, charging, fleet, and
 urban-transport ecosystems.
 
+## Live Demo
+
+[View the deployed IMDX website](https://imdx1.vercel.app/)
+
 ## Preview
 
 ![IMDX desktop homepage](./screenshots/desktop.png)
