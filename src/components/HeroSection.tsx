@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
@@ -7,6 +7,8 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
   const scrollToAbout = () => {
     const el = document.getElementById('about');
     if (el) {
@@ -19,12 +21,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
       {/* Inset rounded container */}
       <div className="relative w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden bg-black flex flex-col justify-center">
         {/* Background video */}
+        <img
+          className={`absolute inset-0 w-full h-full object-cover select-none pointer-events-none transition-opacity duration-700 ${
+            videoPlaying ? 'opacity-0' : 'opacity-100'
+          }`}
+          src="/assets/aistudio/IMDX_Mobility_Ecosystem_at_Sunset_3add7179.png"
+          alt=""
+          aria-hidden="true"
+        />
         <video
-          className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+          className={`absolute inset-0 w-full h-full object-cover select-none pointer-events-none transition-opacity duration-700 ${
+            videoPlaying ? 'opacity-100' : 'opacity-0'
+          }`}
           autoPlay
           loop
           muted
           playsInline
+          onPlaying={() => setVideoPlaying(true)}
           src="/assets/aistudio/Data_connecting_urban_mobility_e__1080p_20261025172922_c74d1cb3.mp4"
         />
 
