@@ -1,0 +1,6 @@
+{
+  "name": "IMDX - India Mobility Data Exchange",
+  "description": "India Mobility Data Exchange landing page built by Tecmotiv Solutions Pvt. Ltd. with React, Vite, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

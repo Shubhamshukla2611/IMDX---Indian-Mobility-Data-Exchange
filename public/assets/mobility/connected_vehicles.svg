@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E1E1E" />
+      <stop offset="100%" stop-color="#0A0A0A" />
+    </radialGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DEDBC8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#8E8D7F" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.2" />
+    </linearGradient>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dark container background with border -->
+  <rect width="200" height="200" rx="28" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+
+  <!-- Subtle grid lines -->
+  <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(222,219,200,0.05)" stroke-width="1" stroke-dasharray="3 3" />
+  <circle cx="100" cy="100" r="52" fill="none" stroke="rgba(222,219,200,0.08)" stroke-width="1" />
+  <circle cx="100" cy="100" r="28" fill="none" stroke="rgba(222,219,200,0.12)" stroke-width="1" />
+
+  <!-- Radiating Telemetry Pulse Waves -->
+  <path d="M 60 70 A 48 48 0 0 1 140 70" fill="none" stroke="rgba(222,219,200,0.25)" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M 72 82 A 32 32 0 0 1 128 82" fill="none" stroke="url(#glowGrad)" stroke-width="2" stroke-linecap="round" filter="url(#subtleGlow)" />
+
+  <!-- Connected Electric Vehicle Silhouette (Top-down / isometric streamlined form) -->
+  <g transform="translate(0, 10)">
+    <!-- Chassis shadow -->
+    <path d="M 78 70 C 78 52 86 46 100 46 C 114 46 122 52 122 70 L 124 108 C 124 122 118 132 100 132 C 82 132 76 122 76 108 Z" 
+          fill="#121212" stroke="rgba(222,219,200,0.6)" stroke-width="2" />
+
+    <!-- Windshield & Glass roof -->
+    <path d="M 83 66 C 85 58 92 56 100 56 C 108 56 115 58 117 66 L 118 78 C 118 80 116 82 114 82 L 86 82 C 84 82 82 80 82 78 Z" 
+          fill="rgba(222,219,200,0.15)" stroke="rgba(222,219,200,0.4)" stroke-width="1" />
+
+    <path d="M 84 88 L 116 88 L 115 106 C 115 110 110 114 100 114 C 90 114 85 110 85 106 Z" 
+          fill="rgba(222,219,200,0.1)" stroke="rgba(222,219,200,0.25)" stroke-width="1" />
+
+    <!-- Headlight signature (warm cream) -->
+    <path d="M 80 50 L 86 52" stroke="#DEDBC8" stroke-width="2.5" stroke-linecap="round" filter="url(#subtleGlow)" />
+    <path d="M 120 50 L 114 52" stroke="#DEDBC8" stroke-width="2.5" stroke-linecap="round" filter="url(#subtleGlow)" />
+
+    <!-- Taillight LED strip (subtle red/amber) -->
+    <path d="M 82 128 L 118 128" stroke="#F87171" stroke-width="2" stroke-linecap="round" filter="url(#subtleGlow)" />
+  </g>
+
+  <!-- CAN Bus / Telemetry Data Stream Nodes -->
+  <g>
+    <!-- Left data node -->
+    <circle cx="44" cy="115" r="3" fill="#DEDBC8" filter="url(#subtleGlow)" />
+    <path d="M 47 115 L 76 118" stroke="rgba(222,219,200,0.3)" stroke-width="1" stroke-dasharray="2 2" />
+
+    <!-- Right data node -->
+    <circle cx="156" cy="115" r="3" fill="#DEDBC8" filter="url(#subtleGlow)" />
+    <path d="M 153 115 L 124 118" stroke="rgba(222,219,200,0.3)" stroke-width="1" stroke-dasharray="2 2" />
+
+    <!-- Top GPS / Satellite uplink node -->
+    <circle cx="100" cy="38" r="3.5" fill="#34D399" filter="url(#subtleGlow)" />
+    <line x1="100" y1="41.5" x2="100" y2="55" stroke="url(#cyanAccent)" stroke-width="1.5" stroke-dasharray="2 2" />
+  </g>
+
+  <!-- Minimalist status label -->
+  <text x="100" y="172" text-anchor="middle" font-family="monospace" font-size="8.5" fill="rgba(222,219,200,0.5)" letter-spacing="2">TELEMETRY · SDV</text>
+</svg>
